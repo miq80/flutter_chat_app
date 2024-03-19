@@ -2,11 +2,16 @@ import 'package:chap_application/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField(
-      {super.key, required this.textObscure, required this.textName});
+  CustomTextField({
+    super.key,
+    required this.textObscure,
+    required this.textName,
+    this.controller,
+  });
 
   final bool textObscure;
   final String textName;
+  final controller;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +33,7 @@ class CustomTextField extends StatelessWidget {
               hintText: textName,
             ),
             obscureText: textObscure,
+            controller: controller,
           ),
         ),
       ],
